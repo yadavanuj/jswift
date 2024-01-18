@@ -1,7 +1,5 @@
 package com.yadavanuj.github.jswift.services;
 
-import com.fasterxml.jackson.databind.JsonNode;
-import com.github.victools.jsonschema.generator.*;
 import com.yadavanuj.github.jswift.entities.BulkHead;
 import com.yadavanuj.github.jswift.entities.Tenant;
 import com.yadavanuj.github.jswift.repositories.BulkHeadRepository;
@@ -24,13 +22,13 @@ public class BulkHeadService {
         this.tenantRepository = tenantRepository;
     }
 
-    public JsonNode getSchema() {
-        SchemaGeneratorConfigBuilder configBuilder = new SchemaGeneratorConfigBuilder(SchemaVersion.DRAFT_7, OptionPreset.PLAIN_JSON);
-        SchemaGeneratorConfig config = configBuilder.build();
-        SchemaGenerator generator = new SchemaGenerator(config);
-        JsonNode jsonSchema = generator.generateSchema(BulkHead.class);
-        return jsonSchema;
-    }
+//    public JsonNode getSchema() {
+//        SchemaGeneratorConfigBuilder configBuilder = new SchemaGeneratorConfigBuilder(SchemaVersion.DRAFT_7, OptionPreset.PLAIN_JSON);
+//        SchemaGeneratorConfig config = configBuilder.build();
+//        SchemaGenerator generator = new SchemaGenerator(config);
+//        JsonNode jsonSchema = generator.generateSchema(BulkHead.class);
+//        return jsonSchema;
+//    }
 
     public BulkHead create(BulkHead bulkHead) {
         Optional<Tenant> maybeTenant = tenantRepository.findById(bulkHead.getTenant().getTenantId());

@@ -26,10 +26,10 @@ public class BulkHeadController {
         return service.getAll();
     }
 
-    @GetMapping("/bulkheads/schema")
-    public JsonNode getSchema() {
-        return service.getSchema();
-    }
+//    @GetMapping("/bulkheads/schema")
+//    public JsonNode getSchema() {
+//        return service.getSchema();
+//    }
 
 
     @PostMapping("/bulkheads/add")
